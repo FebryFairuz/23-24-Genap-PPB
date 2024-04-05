@@ -7,7 +7,7 @@ import {
   StatusBar,
 } from "react-native";
 import React from "react";
-import { ButtonPrimary } from "../components/buttons/ButtonsUI";
+import { ButtonPrimary } from "../components/Buttons/ButtonUi";
 
 export function OnBoardScreen({navigation}) {
   return (
@@ -19,11 +19,11 @@ export function OnBoardScreen({navigation}) {
       <SafeAreaView style={styles.container}>
         <StatusBar hidden={true} />
         <View style={{ flex:1, justifyContent:"flex-end" }}>
-            <Text style={{ ...styles.text, fontSize:30 }}>Bed Time Story</Text>
+            <Text style={{ ...styles.text, fontSize:30 }}>Bedtime Stories</Text>
             <Text style={{ ...styles.text, fontSize:18 }}>is the happiness</Text>
         </View>
         <View style={styles.containerBtn}>
-          <ButtonPrimary onPress={() => navigation.navigate('Signin')}>
+          <ButtonPrimary onPress={() => navigation.navigate('SignIn')}>
             <Text style={styles.text}>Get Started</Text>
           </ButtonPrimary>
         </View>

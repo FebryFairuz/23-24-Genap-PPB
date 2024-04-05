@@ -6,7 +6,7 @@ const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
 const screenSize = Math.sqrt(width * height) / 100;
 
-const horizontalScale = (size: number) => (width / guidelineBaseWidth) * size;
-const verticalScale = (size: number) => (height / guidelineBaseHeight) * size;
+const horizontalScale = (number) => (width / guidelineBaseWidth) * size;
+const verticalScale = (number) => (height / guidelineBaseHeight) * size;
 
 export { horizontalScale, verticalScale, screenSize };
