@@ -12,7 +12,7 @@ import {
 import React, { useState } from "react";
 import { FieldEmails, FieldPassword } from "./components/Forms";
 import { ButtonPrimary } from "../../components/Buttons/ButtonUi";
-import { PlatformOSConfirm } from "../../utils/GeneralHelper";
+import { PlatformOSConfirm } from "../../services/GeneralHelper";
 
 export function SignIn({ navigation }) {
   const [isPasswordShown, setIsPasswordShown] = useState(true);
@@ -26,8 +26,9 @@ export function SignIn({ navigation }) {
     if(submit.email && submit.password){
       if(submit.email === "febrid@ibik.ac.id" && submit.password === "ppb@ibik2024")
       PlatformOSConfirm("Welcome");
+      navigation.navigate("MainApps");
     }else{
-      PlatformOSConfirm("Please fill up the form");
+      PlatformOSConfirm("Please fill in all fields correctly");
     }
   }
 

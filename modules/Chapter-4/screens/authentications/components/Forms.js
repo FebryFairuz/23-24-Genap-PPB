@@ -55,11 +55,7 @@ const FieldPassword = (props) => {
             right: 12,
           }}
         >
-          {isPasswordShown == true ? (
-            <Ionicons name="eye" size={24} color={"black"} />
-          ) : (
-            <Ionicons name="eye-off" size={24} color={"black"} />
-          )}
+          <Ionicons name={(isPasswordShown == true) ? "eye" : "eye-off"} size={24} color={"black"} />
         </TouchableOpacity>
       </View>
       {!submit.password && <Text style={styles.textRequired}>Required field</Text>}

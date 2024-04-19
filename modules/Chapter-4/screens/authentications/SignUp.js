@@ -10,7 +10,7 @@ import Titles from "./components/Titles";
 import { FieldEmails, FieldMobileNum, FieldPassword } from "./components/Forms";
 import Checkbox from "expo-checkbox";
 import { ButtonPrimary, ButtonTersier } from "../../components/Buttons/ButtonUi";
-import { PlatformOSConfirm } from "../../utils/GeneralHelper";
+import { PlatformOSConfirm } from "../../services/GeneralHelper";
 
 export function SignUp({ navigation }) {
   const [isPasswordShown, setIsPasswordShown] = useState(true);
