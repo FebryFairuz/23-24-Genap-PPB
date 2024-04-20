@@ -8,37 +8,12 @@ import {
   StyleSheet,
   ScrollView,
   StatusBar,
+  TextInput,
 } from "react-native";
 import React, { useState } from "react";
-import { FieldEmails, FieldPassword } from "./components/Forms";
 import { ButtonPrimary } from "../../components/Buttons/ButtonUi";
-import { PlatformOSConfirm } from "../../services/GeneralHelper";
-import { UserList } from "../../utils/ConstData";
 
-export function SignIn({ navigation }) {
-  const [isPasswordShown, setIsPasswordShown] = useState(true);
-  const objSignIn = {
-    email: "",
-    password: "",
-  };
-  const [submit, setSubmit] = useState(objSignIn);
-
-  const HandlerSignIn = () =>{
-    if(submit.email && submit.password){
-      //if(submit.email === "febrid@ibik.ac.id" && submit.password === "ppb@ibik2024")
-      //Check apakah email dan password ada didalam list UserList pada variable utils/ConstData.js
-      const FindUserAccount = UserList.find(item => item.email === submit.email && item.password === submit.password);
-      if(FindUserAccount){
-        PlatformOSConfirm("Hi, "+FindUserAccount.username+"! Welcome Back...");
-        navigation.navigate("MainApps");
-      }else{
-        PlatformOSConfirm("Username or password is incorrect, try again later");
-      }
-    }else{
-      PlatformOSConfirm("Please fill in all fields correctly");
-    }
-  }
-
+export function KASignIn({ navigation }) {
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
@@ -61,16 +36,37 @@ export function SignIn({ navigation }) {
           </View>
         </SafeAreaView>
         <View style={styles.body}>
-          <FieldEmails submit={submit} setSubmit={setSubmit} />
-          <FieldPassword
-            isPasswordShown={isPasswordShown}
-            setIsPasswordShown={setIsPasswordShown}
-            submit={submit}
-            setSubmit={setSubmit}
-          />
+          <View style={{ marginBottom: 12 }}>
+            <Text style={styles.label}>Email address</Text>
+
+            <View style={styles.textInput}>
+              <TextInput
+                placeholder="Enter your email address"
+                placeholderTextColor={"gray"}
+                style={{
+                  width: "100%",
+                }}
+              />
+            </View>
+          </View>
+
+          <View style={{ marginBottom: 12 }}>
+            <Text style={styles.label}>Password</Text>
+
+            <View style={styles.textInput}>
+              <TextInput
+                placeholder="Enter your password"
+                placeholderTextColor={"gray"}
+                keyboardType="email-address"
+                style={{
+                  width: "100%",
+                }}
+              />
+            </View>
+          </View>
 
           <View style={{ marginVertical: 20 }}>
-            <ButtonPrimary onPress={() => HandlerSignIn()}>
+            <ButtonPrimary>
               <Text style={styles.buttonText}>Sign In</Text>
             </ButtonPrimary>
           </View>
@@ -115,5 +111,35 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "white",
     fontWeight: "bold",
+  },
+  textInput: {
+    width: "100%",
+    height: 48,
+    borderColor: "black",
+    borderWidth: 1,
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingLeft: 22,
+  },
+  textGroup: {
+    width: "100%",
+    height: 48,
+    borderWidth: 1,
+    borderRadius: 8,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingLeft: 22,
+  },
+  textAddOn: {
+    width: "12%",
+    borderRightWidth: 1,
+    borderLeftColor: "black",
+    height: "100%",
+  },
+  textRequired: {
+    color: "red",
+    marginVertical: 5,
   },
 });

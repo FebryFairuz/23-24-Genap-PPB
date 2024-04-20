@@ -4,6 +4,7 @@ import { OnBoardScreen } from '../screens/OnBoardScreen';
 import { SignIn, SignUp } from '../screens/authentications';
 import { MainAppsScreen } from '../screens/MainAppsScreen';
 import DetailBook from '../screens/single-screen/DetailBook';
+import { KASignIn } from '../screens/authentications/KASignIn';
 
 
 export default function RoutesApp() {
