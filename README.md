@@ -15,15 +15,16 @@
 3. `cd ProjectNameHere`
 4. run the metro server `expo start` or `npm start`
 
-## Study Cases
 
-Project - Bedtime Stories
+## How to running this project repository
 
-<img src="https://github.com/FebryFairuz/23-24-Genap-PPB/blob/master/captures/on-board.png" width="200" />
-
-<img src="https://github.com/FebryFairuz/23-24-Genap-PPB/blob/master/captures/sign-in.png" width="200" />
-
-<img src="https://github.com/FebryFairuz/23-24-Genap-PPB/blob/master/captures/sign-up.png" width="200" />
+1. Intall GIT [here] (https://git-scm.com/downloads)
+2. Open terminal, entering to drive path that you want to save the project
+3. Clone this repository with  command:  `git clone https://github.com/FebryFairuz/23-24-Genap-PPB.git`
+4. Change directory to cloned folder : `cd 23-24-Genap-PPB`
+5. Run npm install for installing all dependencies of the project  : `npm install`
+6. Run the metro server `expo start` or `npm start`type on terminal: `expo start`
+7. To see the project in action, open one emulator / simulator from Android studio or use real device if connected Expo Go.
 
 
 ## How to create a new Branch
@@ -38,3 +39,13 @@ Project - Bedtime Stories
 8. After finish your work in your branch, make sure your branch is still up to date 
 9. Make sure you already in your selected branch, type this command to check current branch: `git branch`
 10. To push  your changes into your own branch, use this command : `git add --all` and than commit  using this command : `git commit -m  "your label changed"` and than push the code with this command:  `git push -u origin YourBranchName` sample `git push -u origin HomePages`
+
+## Study Cases
+
+Project - Bedtime Stories
+
+<img src="https://github.com/FebryFairuz/23-24-Genap-PPB/blob/master/captures/on-board.png" width="200" />
+
+<img src="https://github.com/FebryFairuz/23-24-Genap-PPB/blob/master/captures/sign-in.png" width="200" />
+
+<img src="https://github.com/FebryFairuz/23-24-Genap-PPB/blob/master/captures/sign-up.png" width="200" />
