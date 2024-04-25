@@ -1,3 +1,5 @@
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+
 const UserList = [
     {id:1, username:"mira", email:"mira@student.ibik.ac.id", password:"mira@123"},
     {id:2, username:"carlos", email:"carlos@student.ibik.ac.id", password:"carlos@321"}
@@ -19,10 +21,10 @@ const ListCateg = [
 ]
 
 const Genres = [
-    {id:1, name:"Fiksi", icon:"", books:[1,3,5]},
-    {id:2, name:"Non Fiksi", icon:"", books:[1,3,5]},
-    {id:3, name:"Komedi", icon:"", books:[1,3,5]},
-    {id:4, name:"Horor", icon:"", books:[1,3,5]},
+    {id:1, name:"Fiksi", icon: <FontAwesome5 name="galactic-republic" size={20} color="orange"/>, books:[1,3,5]},
+    {id:2, name:"Non Fiksi", icon:<FontAwesome5 name="book-open" size={20} color="orange" />, books:[1,3,5]},
+    {id:3, name:"Komedi", icon:<FontAwesome5 name="laugh" size={20} color="orange" />, books:[1,3,5]},
+    {id:4, name:"Horor", icon:<FontAwesome5 name="ghost" size={20} color="orange" />, books:[1,3,5]},
 ]
 
 const History = [
