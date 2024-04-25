@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, View,Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Books = ({item}) => {
     return (
-        <View style = {styles.content}>
+        <TouchableOpacity style = {styles.content}>
             <View style={styles.image}></View>
             <Text>{item.title}</Text>
-        </View> 
+        </TouchableOpacity> 
     );
 }
 

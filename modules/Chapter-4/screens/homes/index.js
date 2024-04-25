@@ -6,6 +6,7 @@ import { UserList, ListBook, ListCateg, History, Genres, MyFavorite } from "../.
 import FlatListRecently from "./homeComponents/FlatListRecently";
 import FlatListRecommended from "./homeComponents/FlatListRecommended";
 import FlatListPopular from "./homeComponents/FlatListPopular";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 export default class Homes extends Component {
@@ -19,8 +20,7 @@ export default class Homes extends Component {
               <Text style={styles.Text}>Bedtime Stories</Text>
               <FontAwesome5 name={"bell"} size={25} color="orange" />
             </View>
-            <View style={styles.promote}>
-            </View>
+            <TouchableOpacity style={styles.promote}></TouchableOpacity>
           </View>
           <View style={styles.body}>
             <View>
