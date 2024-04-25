@@ -1,6 +1,6 @@
 const UserList = [
     {id:1, username:"mira", email:"mira@student.ibik.ac.id", password:"mira@123"},
-    {id:2, username:"carlos", email:"carlos@student.ibik.ac.id", password:"carlos@321"}
+    {id:2, username:"carlos", email:"carlos@student.ibik.ac.id", password:"carlos@321"},
 ]
 
 const ListBook = [
@@ -13,10 +13,10 @@ const ListBook = [
 ]
 
 const ListCateg = [
-    {id:1, name:"Recomendations", books:[1,3,5]},
-    {id:2, name:"Recently", books:[6,5,4]},
-    {id:3, name:"Populer", books:[3,2,1]},
-]
+    {id:1, name:"Recomendations", books:[1,3,5,2]},
+    {id:2, name:"Recently", books:[6,5,4,2]},
+    {id:3, name:"Populer", books:[3,2,1,4]},
+]//Mapping
 
 const Genres = [
     {id:1, name:"Fiksi", icon:"", books:[1,3,5]},
