@@ -14,7 +14,7 @@ export default function RoutesApp() {
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown:false, animation:'slide_from_bottom' }} />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown:false, }} />
         <Stack.Screen name="MainApps" component={MainAppsScreen} options={{ headerShown:false, gestureEnabled:false }} />
-        <Stack.Screen name="DetailBook" component={DetailBook} options={{ headerShown:true, headerBackTitle:"Back", headerTitle:"Kurcacil & Friends" }} />
+        <Stack.Screen name="DetailBook" component={DetailBook} options={{ headerShown:true, headerBackTitle:"Back", headerTitle:"Books" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
