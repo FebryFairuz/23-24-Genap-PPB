@@ -14,6 +14,17 @@ import React, { useState } from "react";
 import { ButtonPrimary } from "../../components/Buttons/ButtonUi";
 
 export function KASignIn({ navigation }) {
+  //lifecycle RFC = HOOK
+  const objSignIn = {email: "mario@gmail.com", password:""};
+  //HOOK useState => [ getter, setter ]
+  const [signin , setSignIn] = useState(objSignIn);
+  const [showPassword, setShowPassword] = useState(true);
+
+  const HandlerTypingPassword = (text) =>{
+    setSignIn({...signin, password: text})
+    setShowPassword(!showPassword);
+  }
+
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
@@ -43,11 +54,14 @@ export function KASignIn({ navigation }) {
               <TextInput
                 placeholder="Enter your email address"
                 placeholderTextColor={"gray"}
+                value={signin.email}
+                onChangeText={(text) => setSignIn({...signin, email: text})}
                 style={{
                   width: "100%",
                 }}
               />
             </View>
+
           </View>
 
           <View style={{ marginBottom: 12 }}>
@@ -55,9 +69,12 @@ export function KASignIn({ navigation }) {
 
             <View style={styles.textInput}>
               <TextInput
+                secureTextEntry= {showPassword}
                 placeholder="Enter your password"
                 placeholderTextColor={"gray"}
                 keyboardType="email-address"
+                value={signin.password}
+                onChangeText={(text) => HandlerTypingPassword(text)}
                 style={{
                   width: "100%",
                 }}
@@ -66,6 +83,10 @@ export function KASignIn({ navigation }) {
           </View>
 
           <View style={{ marginVertical: 20 }}>
+            <ButtonPrimary onPress={()=>setShowPassword(!showPassword)}>
+              <Text style={styles.buttonText}>Show Password</Text>
+            </ButtonPrimary>
+
             <ButtonPrimary>
               <Text style={styles.buttonText}>Sign In</Text>
             </ButtonPrimary>
