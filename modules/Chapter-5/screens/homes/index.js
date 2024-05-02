@@ -31,19 +31,19 @@ export default class Homes extends Component {
           <View style={styles.body}>
             <View>
               <Text style={{ fontSize: 24, marginLeft: 20 }}>Recently</Text>
-              <View>
+              <View style={styles.bookContainer}>
                 <FlatListRecently Data={ListBook} navigation={this.props.navigation} />
               </View>
             </View>
             <View>
               <Text style={{ fontSize: 24, marginLeft: 20 }}>Popular</Text>
-              <View>
+              <View style={styles.bookContainer}>
                 <FlatListRecommended Data={ListBook} />
               </View>
             </View>
             <View>
               <Text style={{ fontSize: 24, marginLeft: 20 }}>New Story</Text>
-              <View>
+              <View style={styles.bookContainer}>
                 <FlatListPopular Data={ListBook} />
               </View>
             </View>
@@ -87,4 +87,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 50,
     paddingTop: 20,
   },
+  bookContainer:{
+    marginHorizontal:20,
+  }
 });

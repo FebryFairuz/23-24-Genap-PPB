@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View,Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View,Text, TouchableOpacity, Dimensions } from 'react-native';
+const { width } = Dimensions.get('window');
 
 const Books = ({item, navigation}) => {
     return (
@@ -12,15 +13,15 @@ const Books = ({item, navigation}) => {
 
 const styles = StyleSheet.create({
     content:{
-        justifyContent:'center',
+        justifyContent:'flex-start',
         height:200,
-        width:100,
-        margin:15,
+        width:(width-40)/3,
+        marginRight:15,
     },
     image:{
         backgroundColor:'orange',
         height:180,
-        width:100
+        width:(width-40)/3-15
     }
 })
 
