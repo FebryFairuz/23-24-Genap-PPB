@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, View,Text, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, View,Text, TouchableOpacity, Dimensions,Image } from 'react-native';
 const { width } = Dimensions.get('window');
 
 const Books = ({item, navigation}) => {
     return (
         <TouchableOpacity style = {styles.content}  onPress={() => navigation.navigate('DetailBook')}>
-            <View style={styles.image}></View>
+            <Image source ={item.img} style={styles.image}></Image>
             <Text>{item.title}</Text>
         </TouchableOpacity> 
     );
