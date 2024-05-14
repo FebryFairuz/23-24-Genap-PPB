@@ -4,21 +4,25 @@ import Headers from "./components/HeadersUI";
 import GenresFlatList from "./components/GenresFlatList";
 import BodyFlatList from "./components/BodyFlatList";
 import ExpScrollView from "./components/ExpScrollView";
-import { ListBook } from "../../utils/ConstData";
-import { useNavigation } from "@react-navigation/native";
+import { Genres, ListBook } from "../../utils/ConstData";
+import { getFocusedRouteNameFromRoute, useNavigation } from "@react-navigation/native";
 
-export default function DetailGenre({route}) {
-  const navigation = useNavigation();
-  const { genre_id } = route.params;
-
+export default function DetailGenre({navigation}) {
+  React.useLayoutEffect(() => {
+    const routeName = getFocusedRouteNameFromRoute(navigation)
+    if(routeName === "DetailGenre") {
+      navigation.setOptions({tabBarVisible: false})
+    }
+  }, [navigation])
+  
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container}>   
       <StatusBar hidden={false} />
       <View style={styles.header}>
         <Headers navigation={navigation} />
       </View>
       <View style={styles.genre}>
-        <GenresFlatList genre_id={genre_id} />
+        <GenresFlatList genre_id={Genres} />
       </View>
       <View style={styles.topTextContainer}>
         <Text style={styles.topText}>TOP 5</Text>
@@ -27,7 +31,7 @@ export default function DetailGenre({route}) {
         <BodyFlatList rate={ListBook} />
       </View>
       <View style={styles.fantasy}>
-        <ExpScrollView  />
+        <ExpScrollView Card={ListBook} />
       </View>
     </SafeAreaView>
   );

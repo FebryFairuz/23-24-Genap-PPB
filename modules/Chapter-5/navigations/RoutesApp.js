@@ -4,6 +4,7 @@ import { OnBoardScreen } from '../screens/OnBoardScreen';
 import { SignIn, SignUp } from '../screens/authentications';
 import { MainAppsScreen } from '../screens/MainAppsScreen';
 import DetailBook from '../screens/single-screen/DetailBook';
+import DetailGenre from '../screens/explores/DetailGenre';
 
 export default function RoutesApp() {
   const Stack = createNativeStackNavigator();
@@ -15,7 +16,10 @@ export default function RoutesApp() {
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown:false, }} />
         <Stack.Screen name="MainApps" component={MainAppsScreen} options={{ headerShown:false, gestureEnabled:false }} />
         <Stack.Screen name="DetailBook" component={DetailBook} options={{ headerShown:true, headerBackTitle:"Back", headerTitle:"Kurcacil & Friends" }} />
+        <Stack.Screen name="DetailGenre" component={DetailGenre} options={false} />
+        {/* belum paham pak di bagian routeapp nya  */}
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+

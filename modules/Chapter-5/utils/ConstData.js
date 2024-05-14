@@ -16,11 +16,11 @@ const UserList = [
 const ListBook = [
   {
     id: 1,
-    title: "Giraffes Can't Dance",
+    title: "Halleween Candy",
     img: require("../../../assets/_images/books/Halloween_candy.png"),
     author: "Giles Andreae",
     genre: ["Children's Fiction", "Self-Help"],
-    rating: 5,
+    rating: 1,
     views: 100,
     sinopsis:
       "This charming tale follows Gerald the giraffe, who feels left out at the Jungle Dance because of his clumsy dancing. With the help of a wise friend, Gerald learns that sometimes it just takes a different tune to find your rhythm and dance to your own beat.",
@@ -29,11 +29,11 @@ const ListBook = [
   },
   {
     id: 2,
-    title: "The Little Prince",
+    title: "Hantu Durian",
     img: require("../../../assets/_images/books/Hantu_durian.png"),
     author: "Antoine de Saint-Exupery",
     genre: ["Fantasy", "Philosophy"],
-    rating: 5,
+    rating: 2,
     views: 100,
     sinopsis:
       "Antoine de Saint-Exupéry's timeless classic tells the story of a young prince who travels from planet to planet, meeting a variety of characters and learning important life lessons along the way. Through his encounters, he discovers the value of love, friendship, and the beauty of innocence.",
@@ -42,11 +42,11 @@ const ListBook = [
   },
   {
     id: 3,
-    title: "Have You Filled A Bucket Today?",
+    title: "Hikayat Hang Tuah",
     img: require("../../../assets/_images/books/Hikayat_hang_tuah.png"),
     author: "Carol McCloud",
     genre: ["Children's Literature", "Self-Help"],
-    rating: 5,
+    rating: 3,
     views: 100,
     sinopsis:
       "This heartwarming book introduces the concept of 'bucket filling' as a metaphor for expressing kindness and appreciation towards others. Through simple yet profound illustrations and language, readers learn the power of empathy, compassion, and positivity in filling not only others' buckets but also their own.",
@@ -55,11 +55,11 @@ const ListBook = [
   },
   {
     id: 4,
-    title: "Harry Potter and the Cursed Child - Parts I & II",
+    title: "Kisah Konyol",
     img: require("../../../assets/_images/books/Kisah_konyol.png"),
     author: "J. K. Rowling",
     genre: ["Fantasy", "Young Adult"],
-    rating: 5,
+    rating: 4,
     views: 100,
     sinopsis:
       "Set nineteen years after the events of the original series, 'Harry Potter and the Cursed Child' follows Harry Potter's youngest son, Albus Severus Potter, as he navigates the challenges of Hogwarts School of Witchcraft and Wizardry. The story explores themes of friendship, family, and the enduring power of love amidst the shadows of the past.",
@@ -68,7 +68,7 @@ const ListBook = [
   },
   {
     id: 5,
-    title: "There Was an Old Lady Who Swallowed a Fly",
+    title: "Lutung Kasarung",
     img: require("../../../assets/_images/books/Lutung_kasarung.png"),
     author: "Pam Adams",
     genre: ["Children's Literature", "Nursery Rhyme"],
@@ -81,11 +81,11 @@ const ListBook = [
   },
   {
     id: 6,
-    title: "Wonder",
+    title: "Malin Kundang",
     img: require("../../../assets/_images/books/Malin_kundang.png"),
     author: "R. J. Palacio",
     genre: ["Young Adult", "Realistic Fiction"],
-    rating: 5,
+    // rating: 6,
     views: 100,
     sinopsis:
       "R.J. Palacio's poignant novel tells the story of Auggie Pullman, a young boy with a facial deformity who enters mainstream school for the first time in fifth grade. Through multiple perspectives, readers witness Auggie's journey of self-discovery, friendship, and acceptance, as he teaches those around him the true meaning of kindness and empathy.",

@@ -1,17 +1,18 @@
 import React from "react";
-import { FlatList, View, Text } from "react-native";
+import { FlatList } from "react-native";
 import BodyUI from "./BodyUI";
 
-const BodyFlatList = ({ rate }) => { 
-    return (
-      
+const BodyFlatList = ({ rate }) => {
+  const filteredBooks = rate.filter(book => book.rating >= 1 && book.rating <= 5);
+
+  return (
     <FlatList
-        horizontal={true}
-        data={rate} 
-        renderItem={({ item }) => <BodyUI book={item} />} // Perbaikan di sini
-      
-      />
-    );
+      horizontal={true}
+      data={filteredBooks}
+      renderItem={({ item }) => <BodyUI book={item} />}
+      keyExtractor={(item, index) => index.toString()}
+    />
+  );
 };
-  
+
 export default BodyFlatList;

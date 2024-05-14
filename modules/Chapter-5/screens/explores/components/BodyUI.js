@@ -19,7 +19,7 @@ const BodyUI = ({ book }) => {
     <View style={styles.container}>
       <View style={styles.containerimg}>
         <Text style={styles.rate}>{book.rating}</Text>
-        <Image source={{ uri: book.img }} style={styles.image} />
+        <Image source={book.img} style={styles.image}/>
         <View style={styles.details}>
           <View style={styles.star}>{renderStarRating(book.rating)}</View>
           <Text style={styles.title}>{book.title}</Text>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 10,
     borderWidth: 1,
-    flex: 1,
+    flex: 2,
     flexDirection: "row",
     alignItems: "center",
     padding: 10,
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
     width: 150,
   },
   image: {
-    width: "90%",
-    height: "70%",
+    width: 100, 
+    height: 120, 
     borderRadius: 10,
     marginBottom: 5,
   },
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     color: "#2E4A6A",
+    marginBottom: 3,
 
   },
   details: {
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
     color: "#2E4A6A",
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 4
+    marginBottom: 4,
   },
   star: {
     flexDirection: "row",
