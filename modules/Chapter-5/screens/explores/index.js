@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Explorers from "./Explorers";
 import DetailGenre from "./DetailGenre";
+import NExplorers from "./NExplorers";
 
 
 export default function ExplorerNav() {
@@ -13,7 +14,7 @@ export default function ExplorerNav() {
         <Stack.Screen
           options={{ headerShown: false }}
           name="Explorer"
-          component={Explorers}
+          component={NExplorers}
         />
         <Stack.Screen
           options={{ headerShown: false }}

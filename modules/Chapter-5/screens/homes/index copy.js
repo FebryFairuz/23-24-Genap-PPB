@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FlatListRecently from "./components/FlatListRecently";
 import FlatListRecommended from "./components/FlatListRecommended";
@@ -15,34 +15,33 @@ import FlatListPopular from "./components/FlatListPopular";
 import { ListBook } from "../../utils/ConstData";
 import AsyncStorage  from "@react-native-async-storage/async-storage";
 
-export default function Home() {
-  const [myprofile, setMyProfile] = useState();
-  const getData = async () => {
-    try {
-      const value = await AsyncStorage.getItem('my_profile');
-      if (value !== null) {
-        let acc = JSON.parse(value);
-        console.log("profile:",acc);
-        setMyProfile(acc);
+export default class Homes extends Component {
+  render() {
+    let myAcc = "";
+    const getData = async () => {
+      try {
+        const value = await AsyncStorage.getItem('my_account');
+        if (value !== null) {
+          // value previously stored
+          console.log(value);
+          let acc = JSON.parse(value);
+          myAcc = acc.fullname;
+          console.log("name",myAcc);
+        }
+      } catch (e) {
+        // error reading value
+        console.log(e);
       }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  useEffect(()=>{
+    };
     getData();
-  },[myprofile])
-
-
-  return (
-    <ScrollView>
+    return (
+      <ScrollView>
         <StatusBar hidden={false} barStyle={"light-content"} />
         <SafeAreaView style={styles.container}>
           <StatusBar hidden={true} />
           <View style={styles.header}>
             <View style={styles.title}>
-              <Text style={styles.Text}>{myprofile ? "Hi,"+myprofile.username : "Bedtime Stories"}</Text>
+              <Text style={styles.Text}>Bedtime Stories {myAcc}</Text>
               <FontAwesome5 name={"bell"} size={25} color="orange" />
             </View>
             <TouchableOpacity style={styles.promote}></TouchableOpacity>
@@ -51,7 +50,7 @@ export default function Home() {
             <View>
               <Text style={{ fontSize: 24, marginLeft: 20 }}>Recently</Text>
               <View>
-                <FlatListRecently Data={ListBook} />
+                <FlatListRecently Data={ListBook} navigation={this.props.navigation} />
               </View>
             </View>
             <View>
@@ -70,7 +69,8 @@ export default function Home() {
           <View style={[styles.footer]}></View>
         </SafeAreaView>
       </ScrollView>
-  )
+    );
+  }
 }
 
 const styles = StyleSheet.create({

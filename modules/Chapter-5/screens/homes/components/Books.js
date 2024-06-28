@@ -12,15 +12,16 @@ const Books = ({item, navigation}) => {
 
 const styles = StyleSheet.create({
     content:{
-        justifyContent:'center',
+        justifyContent:'flex-start',
         height:200,
         width:100,
-        margin:15,
+        margin:'auto',
     },
     image:{
         backgroundColor:'orange',
-        height:180,
-        width:100
+        height:150,
+        width:100,
+        resizeMode:'cover'
     }
 })
 

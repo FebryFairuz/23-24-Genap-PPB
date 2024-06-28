@@ -1,0 +1,6 @@
+export {Home} from "./homes"
+export {DetailBook} from "./books/DetailBook"
+export {ReadStory} from "./books/ReadStory"
+export {Explorers} from "./explorers"
+export {History} from "./history"
+export {Profile} from "./profiles"

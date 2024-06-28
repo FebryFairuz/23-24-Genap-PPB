@@ -14,6 +14,7 @@ import { FieldEmails, FieldPassword } from "./components/Forms";
 import { ButtonPrimary } from "../../components/Buttons/ButtonUi";
 import { PlatformOSConfirm } from "../../services/GeneralHelper";
 import { UserList } from "../../utils/ConstData";
+import AsyncStorage  from "@react-native-async-storage/async-storage";
 
 export function SignIn({ navigation }) {
   const [isPasswordShown, setIsPasswordShown] = useState(true);
@@ -23,14 +24,16 @@ export function SignIn({ navigation }) {
   };
   const [submit, setSubmit] = useState(objSignIn);
 
-  const HandlerSignIn = () =>{
+  const HandlerSignIn = async () =>{
     if(submit.email && submit.password){
       //if(submit.email === "febrid@ibik.ac.id" && submit.password === "ppb@ibik2024")
       //Check apakah email dan password ada didalam list UserList pada variable utils/ConstData.js
       const FindUserAccount = UserList.find(item => item.email === submit.email && item.password === submit.password);
       if(FindUserAccount){
         PlatformOSConfirm("Hi, "+FindUserAccount.username+"! Welcome Back...");
+        await AsyncStorage.setItem("my_profile",JSON.stringify(FindUserAccount));
         navigation.navigate("MainApps");
+        
       }else{
         PlatformOSConfirm("Username or password is incorrect, try again later");
       }

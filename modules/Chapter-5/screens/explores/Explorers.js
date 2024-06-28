@@ -53,6 +53,8 @@ export default class Explorers extends Component {
   genreIcon3 = Genres[2].icon;
   genreIcon4 = Genres[3].icon;
 
+  
+
   render() {
     const { isSidebarOpen, isMicrophoneOpen } = this.state;
     const navigation = this.props.navigation;
@@ -230,8 +232,8 @@ const styles = StyleSheet.create({
   genreCard: {
     flexDirection: "column",
     backgroundColor: "#0b1f3f",
-    width: 110,
-    height: 110,
+    width: 200,
+    height: 120,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 60,
