@@ -23,7 +23,7 @@ export default function ScannerQR() {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    // setScannedData(data);
+    setScannedData(data);
     //alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     navigation.navigate("DetailBook", { book: SelectedBook });
   };
@@ -52,7 +52,6 @@ export default function ScannerQR() {
           style={StyleSheet.absoluteFillObject}
         />
       )}
-      <Text>{scannedData}</Text>
     </View>
   );
 }
