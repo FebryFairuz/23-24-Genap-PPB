@@ -16,7 +16,7 @@ import { ListBook } from "../utils/ConstData";
 export function MainAppsScreen() {
   const navigation = useNavigation();
   const today = moment().format("YYYY-MM-DD");
-  const SelectedBook = ListBook.find((item) => item.id === 1);
+  const SelectedBook = ListBook.find((item) => item.id === 6);
 
   const triggerVibration = () => {
     Vibration.vibrate(2000);
@@ -31,15 +31,12 @@ export function MainAppsScreen() {
   }; 
 
   useEffect(() => {
-    const currentTime = moment();
-    const futureTime = moment().add(1, 'minutes');
-
-    if (currentTime.isAfter(futureTime)) {
-      triggerVibration();
+    triggerVibration();
+    setTimeout(() => {
       navigation.navigate('DetailBook', {book: SelectedBook});
-    }
+    }, 4000);
     showToast();
-  }, [today]);
+  }, []);
 
   const Tab = createBottomTabNavigator();
   return (

@@ -17,7 +17,7 @@ export default function RoutesApp() {
         <Stack.Screen name="MainApps" component={MainAppsScreen} options={{ headerShown:false, gestureEnabled:false }} />
         <Stack.Screen name="DetailBook" component={DetailBook} options={{ headerShown:false, gestureEnabled:false, animation:'slide_from_bottom' }} />
         <Stack.Screen name="ReadStory" component={ReadStory} options={{ headerShown:false, gestureEnabled:false, animation:'slide_from_bottom' }} />
-        <Stack.Screen name="Scanner QR Code" component={ScannerQR} options={{ headerShown:true, gestureEnabled:false, animation:'slide_from_bottom' }} />
+        <Stack.Screen name="Scanner QR Code" component={ScannerQR} options={{ headerShown:true, headerBackTitle:"Back", gestureEnabled:false, animation:'slide_from_bottom' }} />
         
       </Stack.Navigator>
     </NavigationContainer>
